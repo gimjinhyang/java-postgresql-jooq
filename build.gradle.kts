@@ -20,6 +20,7 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-jooq:3.2.1")
+    implementation("org.jooq:jooq:3.19.1")
 
     runtimeOnly("org.postgresql:postgresql:42.2.16")
 
@@ -45,10 +46,6 @@ jooq {
                 includes = ".*"
                 excludes = ""
                 inputSchema = "public"
-            }
-            generate {
-                isPojos = true
-                isDaos = true
             }
             target {
                 packageName = "gim.postgresql.jooq.model"
