@@ -20,10 +20,11 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-jooq")
-    implementation("org.postgresql:postgresql:42.7.1")
+//    implementation("org.postgresql:postgresql:42.7.1")
     runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
+    jooqCodegen("org.postgresql:postgresql")
 }
 
 jooq {
@@ -59,6 +60,5 @@ tasks.withType<Test> {
 }
 
 
-// https://github.com/jOOQ/jOOQ/blob/main/jOOQ-codegen-gradle/build.gradle.kts
 
 
