@@ -20,8 +20,9 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-jooq")
-//    implementation("org.postgresql:postgresql:42.7.1")
+
     runtimeOnly("org.postgresql:postgresql")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
     jooqCodegen("org.postgresql:postgresql")
@@ -43,7 +44,7 @@ jooq {
                 name = "org.jooq.meta.postgres.PostgresDatabase"
                 includes = ".*"
                 excludes = ""
-                inputSchema = ""
+                inputSchema = "public"
             }
 
             generator { }
@@ -58,7 +59,3 @@ jooq {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
-
-
-
-
