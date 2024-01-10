@@ -19,13 +19,13 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-jooq")
+    implementation("org.springframework.boot:spring-boot-starter-jooq:3.2.1")
 
-    runtimeOnly("org.postgresql:postgresql")
+    runtimeOnly("org.postgresql:postgresql:42.2.16")
 
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:3.2.1")
 
-    jooqCodegen("org.postgresql:postgresql")
+    jooqCodegen("org.postgresql:postgresql:42.2.16")
 }
 
 jooq {
