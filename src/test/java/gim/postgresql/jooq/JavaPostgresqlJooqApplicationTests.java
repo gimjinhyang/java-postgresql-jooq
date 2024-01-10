@@ -1,0 +1,13 @@
+package gim.postgresql.jooq;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class JavaPostgresqlJooqApplicationTests {
+
+  @Test
+  void contextLoads() {
+  }
+
+}
