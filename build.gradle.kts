@@ -30,8 +30,10 @@ dependencies {
 }
 
 jooq {
+
     configuration {
         logging = Logging.WARN
+
 
         jdbc {
             driver = "org.postgresql.Driver"
@@ -39,13 +41,16 @@ jooq {
             user = "jinny"
             password = ""
         }
-
         generator {
             database {
                 name = "org.jooq.meta.postgres.PostgresDatabase"
                 includes = ".*"
                 excludes = ""
                 inputSchema = "public"
+            }
+            generate {
+
+
             }
             target {
                 packageName = "gim.postgresql.jooq.model"
@@ -57,4 +62,12 @@ jooq {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+tasks.all {
+//    println(name)
+    if (name.equals("jooqCodegen")) {
+        // disable auto generation jooq
+        enabled = false
+    }
 }
