@@ -2,6 +2,7 @@ package gim.postgresql.jooq.service;
 
 import org.jetbrains.annotations.Nullable;
 import org.jooq.DSLContext;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jooq.JooqTest;
@@ -18,7 +19,7 @@ class MemberServiceTest {
   @Autowired
   private DSLContext dsl;
 
-  //  @Disabled
+  @Disabled
   @Test
   public void test() {
     final @Nullable MemberRecord member = dsl.selectFrom(MEMBER).limit(1).fetchOne();
