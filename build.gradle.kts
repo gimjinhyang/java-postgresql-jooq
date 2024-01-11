@@ -21,25 +21,23 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-jooq:3.2.1")
     implementation("org.jooq:jooq:3.19.1")
-
     runtimeOnly("org.postgresql:postgresql:42.2.16")
-
     testImplementation("org.springframework.boot:spring-boot-starter-test:3.2.1")
-
     jooqCodegen("org.postgresql:postgresql:42.2.16")
 }
 
-jooq {
+val dbUrl: String? = System.getenv("DB_URL")
+val dbUser: String? = System.getenv("DB_USER")
+val dbPassword: String? = System.getenv("DB_PASSWORD")
 
+jooq {
     configuration {
         logging = Logging.WARN
-
-
         jdbc {
             driver = "org.postgresql.Driver"
-            url = "jdbc:postgresql://localhost:5432/jinny"
-            user = "jinny"
-            password = ""
+            url = dbUrl
+            user = dbUser
+            password = dbPassword
         }
         generator {
             database {
@@ -48,10 +46,7 @@ jooq {
                 excludes = ""
                 inputSchema = "public"
             }
-            generate {
-
-
-            }
+            generate {}
             target {
                 packageName = "gim.postgresql.jooq.model"
                 directory = "src/main/java"
