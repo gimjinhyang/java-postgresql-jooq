@@ -20,9 +20,18 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-jooq:3.2.1")
-    implementation("org.jooq:jooq:3.19.1")
-    runtimeOnly("org.postgresql:postgresql:42.2.16")
     testImplementation("org.springframework.boot:spring-boot-starter-test:3.2.1")
+    testImplementation("org.jetbrains:annotations:24.0.0")
+
+    compileOnly("org.projectlombok:lombok:1.18.30")
+    annotationProcessor("org.projectlombok:lombok:1.18.30")
+    testCompileOnly("org.projectlombok:lombok:1.18.30")
+    testAnnotationProcessor("org.projectlombok:lombok:1.18.30")
+
+    implementation("org.jooq:jooq:3.19.1")
+
+
+    runtimeOnly("org.postgresql:postgresql:42.2.16")
     jooqCodegen("org.postgresql:postgresql:42.2.16")
 }
 
